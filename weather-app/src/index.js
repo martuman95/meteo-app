@@ -14,6 +14,28 @@ let day = days[date.getDay()];
 return day +" " + hours + ":" + minutes;
 
 }
+function displayWeatherCondition(response) {
+  let h1 = document.querySelector("h1");
+  h1.innerHTML = response.data.name;
+  let temperature = Math.round(response.data.main.temp);
+  let temperatureElement = document.querySelector("#degrees");
+  temperatureElement.innerHTML = `${temperature}°C`;
+}
+
+function searchLocation(position) {
+  let apiKey = "1d1742d71e2e4296840a997a3c66e304";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=metric`;
+
+  axios.get(apiUrl).then(displayWeatherCondition);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchLocation);
+}
+document
+  .getElementById("current-location-button")
+  .addEventListener("click", getCurrentLocation);
 
 function dispalyTemperature(response) {
 console.log(response.data)
