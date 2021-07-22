@@ -63,3 +63,8 @@ ul {
   list-style: none;
   text-align: left;
 }
+
+.link {
+  font-size: smaller;
+  font-family: "Ubuntu", sans-serif;
+}
