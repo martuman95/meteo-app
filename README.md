@@ -1,2 +1,2 @@
 # meteo-app
-She codes homeworl
+She codes homework
