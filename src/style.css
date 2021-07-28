@@ -68,3 +68,20 @@ ul {
   font-size: smaller;
   font-family: "Ubuntu", sans-serif;
 }
+
+.weather-forecast {
+  margin-top: 13px;
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 16px;
+  opacity: 0.6;
+}
+.forecast-temperatures {
+  font-size: 13px;
+}
+
+.forecast-temperature-min {
+  opacity: 0.6;
+}
