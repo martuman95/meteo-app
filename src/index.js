@@ -15,6 +15,32 @@ return day +" " + hours + ":" + minutes;
 
 }
 
+function displayForecast () {
+forecastElement = document.querySelector("#weather-forecast");
+let forecastHTML = `<div class="row">`;
+let days = ["Thu", "Fri", "Sat", "Sun"];
+
+days.forEach(function (day) {
+forecastHTML = forecastHTML + `
+  <div class="col-2">
+  <div class="weather-forecast-date" id="#first-day">
+                            ${day}
+                        </div>
+                        <div id="for-icon">
+                            <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="" width="42px">
+                        </div>
+                        <div class="forecast-temperatures">
+                        <span class="forecast-temperature-max" id="max-temperature">
+                            18°
+                        </span>
+                        <span class="forecast-temperature-min" id="min-temperature"> 12° </span>
+                        </div>
+                    </div> `;
+              
+});
+ forecastHTML =  forecastHTML + `</div>  `
+                forecastElement.innerHTML = forecastHTML;
+}
 function displayWeatherCondition(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
@@ -92,6 +118,8 @@ function showCelTemperature(event){
   let temperatureElement = document.querySelector("#degrees");
   temperatureElement.innerHTML = Math.round(celsTemperature);
 }
+
+displayForecast();
 
 let celsTemperature = null;
 
