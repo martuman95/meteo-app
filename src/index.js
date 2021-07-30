@@ -16,13 +16,17 @@ return day +" " + hours + ":" + minutes;
 }
 
 function changeBackground(color) {
-  let hours = date.getHours();
-  if (hours <0 && >5) {
-    document.body.style.background = linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
-  } 
- if (hours <5 && >12 ) {
-    document.body.style.background = linear-gradient(179.4deg, rgb(253, 240, 233) 2.2%, rgb(255, 194, 203) 96.2%);
-  }
+   let hours = date.getHours();
+ if (hours < 0 && hours > 5) {
+   document.body.style.background = "linear-gradient(15deg, #13547a 0%, #80d0c7 100%)";
+   } 
+if (hours < 5 && hours > 12 ) {
+ document.body.style.background = "linear-gradient(179.4deg, rgb(253, 240, 233) 2.2%, rgb(255, 194, 203) 96.2%)";
+   }
+if (hours < 12 && hours > 18){
+  document.body.style.background = "linear-gradient(to top, #feada6 0%, #f5efef 100%);"
+}
+
 }
 
 function formatDay (timestamp) {
