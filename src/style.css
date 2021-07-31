@@ -1,3 +1,6 @@
+body {
+  background-image: url(https://doc-0c-9k-docs.googleusercontent.com/docs/securesc/u2lhv4t6i757tag09dofbs2ci631brsj/q8lmau45sofgk8cqmb03mhfenikqlq3t/1627723275000/10924198060932507646/00693053492180788405/1lH1VfcAIQYTwO11JJNFpaes7Js8AHfkj?e=download&authuser=1);
+}
 .container {
   position: relative;
   padding: 60px;
@@ -5,9 +8,6 @@
   border-radius: 15px;
   max-width: 500px;
   margin-top: 50px;
-  background-color: cornsilk;
-  background-image: url(https://cdn.dribbble.com/users/1133651/screenshots/2773833/1025_2_.jpg);
-  background-position: center;
 }
 h1 {
   font-family: "Ubuntu", sans-serif;
@@ -60,6 +60,7 @@ ul {
 .link {
   font-size: smaller;
   font-family: "Ubuntu", sans-serif;
+  color: aliceblue;
 }
 
 .weather-forecast {
@@ -77,4 +78,12 @@ ul {
 
 .forecast-temperature-min {
   opacity: 0.6;
+}
+
+.spotify {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  width: 300px;
 }
