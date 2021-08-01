@@ -53,13 +53,36 @@ forecastHTML = forecastHTML + `
 });
  forecastHTML =  forecastHTML + `</div>  `
                 forecastElement.innerHTML = forecastHTML;
+      
 }
+
+
 function displayWeatherCondition(response) {
   let h1 = document.querySelector("h1");
   h1.innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#degrees");
   temperatureElement.innerHTML = `${temperature}°C`;
+let descriptionElement = document.querySelector("#sky");
+let maxTemp = document.querySelector("#max-temp");
+let minTemp = document.querySelector("#min-temp");
+let feelsLike = document.querySelector("#feels");
+let humidityElement = document.querySelector("#humidity");
+let windSpeed = document.querySelector("#wind");
+let dateElement =document.querySelector("#date");
+let iconElement = document.querySelector("#icon");
+
+descriptionElement.innerHTML = response.data.weather[0].description;
+maxTemp.innerHTML = Math.round(response.data.main.temp_max);
+minTemp.innerHTML = Math.round(response.data.main.temp_min);
+feelsLike.innerHTML = `${Math.round( response.data.main.feels_like )} °C`;;
+humidityElement.innerHTML = response.data.main.humidity + " %" ;
+windSpeed.innerHTML = Math.round(response.data.wind.speed) + " Km/h";
+dateElement.innerHTML = formatDate(response.data.dt * 1000);
+iconElement.setAttribute("src",`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+  iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  getForecast(response.data.coord);  
 }
 
 function searchLocation(position) {
@@ -68,6 +91,8 @@ function searchLocation(position) {
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
+
+
 function getForecast(coordinates) {
 console.log(coordinates);
 let apiKey = "f5ee6fe9739269adb6179e45323cceb3";
@@ -82,6 +107,8 @@ function getCurrentLocation(event) {
 document
   .getElementById("current-location-button")
   .addEventListener("click", getCurrentLocation);
+
+
 function dispalyTemperature(response) {
 console.log(response.data)
 let temperatureElement = document.querySelector("#degrees");
