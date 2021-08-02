@@ -62,7 +62,7 @@ function displayWeatherCondition(response) {
   h1.innerHTML = response.data.name;
   let temperature = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#degrees");
-  temperatureElement.innerHTML = `${temperature}°C`;
+  temperatureElement.innerHTML = `${temperature}`;
 let descriptionElement = document.querySelector("#sky");
 let maxTemp = document.querySelector("#max-temp");
 let minTemp = document.querySelector("#min-temp");
